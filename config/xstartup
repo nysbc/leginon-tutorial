@@ -1,0 +1,11 @@
+#!/bin/sh
+
+[ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup
+[ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
+xsetroot -solid '#222E45' 
+vncconfig -iconic &
+firefox -new-tab -url 0.0.0.0/myamiweb/ -new-tab -url https://github.com/nysbc/leginon-tutorial -new-tab http://emg.nysbc.org/redmine/projects/leginon/wiki/Leginon_Homepage -new-tab -url http://emg.nysbc.org/redmine/projects/leginon/boards&
+xterm -geometry 110x24+10+10 -ls -title "Welcome to Leginon Tutorial!" &
+xterm -geometry 110x24+10-100 -ls -title "Try using 'screen' to run virtual terminals!" &
+xterm -geometry 110x24+800-100 -ls -title "Get assistance at leginon.org/" &
+exec fluxbox
