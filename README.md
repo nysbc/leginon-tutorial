@@ -11,8 +11,7 @@ Docker image for leginon with simulated data for tutorial purpose
 
 **<details><summary>Do you have Docker installed? If not, *click here*</summary><p>**
 
-> **Note:** You must have sudo or root access to install Docker. If you do not wish to run Docker as sudo/root, you need to configure user groups as described here: https://docs.docker.com/install/linux/linux-postinstall/
-</p></details>
+**Note:** You must have sudo or root access to install Docker. If you do not wish to run Docker as sudo/root, you need to configure user groups as described here: https://docs.docker.com/install/linux/linux-postinstall/
 
 ## Linux &nbsp;&nbsp; *(command line)*
 *<details><summary>click to expand</summary><p>*
@@ -21,6 +20,7 @@ Download and install Docker 1.21 or greater for [Linux](https://docs.docker.com/
 > Consider using a Docker 'convenience script' to install (search on your OS's Docker installation webpage).
 
 Launch docker according to your Docker engine's instructions, typically ``docker start``.
+</p></details>
 
 ## MacOS 10.12 and above &nbsp;&nbsp; *(GUI)*
 *<details><summary>click to expand</summary>*
@@ -38,7 +38,9 @@ Launch Kitematic.
 > If on first startup Kitematic displays a red error suggesting that you run using VirtualBox, do so.
 
 </p></details>
-</details>
+
+</p></details>
+
 <br />
 
 **<details><summary>Do you know if X window can be forwarded to your computer ? If not, *click here*</summary><p>**
