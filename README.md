@@ -41,8 +41,6 @@ Launch Kitematic.
 
 </p></details>
 
-<br />
-
 **<details><summary>Do you know if X window can be forwarded to your computer ? If not, *click here*</summary><p>**
 
 ## Linux &nbsp;&nbsp;  *(X windows are native)*
@@ -75,7 +73,7 @@ cd leginon-tutorial
 ./build.sh
 ```
 *This performs the following operations *
-- Downloads the semc/leginon-tutorial repository from github saved intoa local leginon-tutorial directory.
+- Downloads the nysbc/leginon-tutorial repository from github saved into a local leginon-tutorial directory.
 
 - Build a docker image from that,
 </p></details>
