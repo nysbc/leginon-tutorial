@@ -45,6 +45,8 @@ chown -R leginonuser:users /emg/
 chmod 777 /home/leginonuser/.Xauthority
 chown -R leginonuser:users /home/leginonuser/.Xauthority
 
+# add leginon-docker to host file.
+python -c "import socket; print('%s %s' % (socket.gethostbyname(socket.gethostname()),'leginon-docker'))" | xargs echo >> /etc/hosts
 #need a command that does not end to keep container alive
 tail -f /home/leginonuser/.vnc/*:1.log
 for i in {00..99}; do sleep 10; echo $i; done
