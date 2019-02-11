@@ -1,8 +1,8 @@
--- MySQL dump 10.14  Distrib 5.5.60-MariaDB, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 5.6.15, for osx10.7 (x86_64)
 --
 -- Host: localhost    Database: projectdb
 -- ------------------------------------------------------
--- Server version	5.5.60-MariaDB
+-- Server version	5.6.15
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -14,9 +14,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
-CREATE database projectdb;
-USE projectdb;
 
 --
 -- Table structure for table `boxtypes`
@@ -32,7 +29,7 @@ CREATE TABLE `boxtypes` (
   `image` varchar(100) NOT NULL DEFAULT '0',
   `image_tiny` varchar(100) NOT NULL,
   PRIMARY KEY (`boxtypeId`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +38,7 @@ CREATE TABLE `boxtypes` (
 
 LOCK TABLES `boxtypes` WRITE;
 /*!40000 ALTER TABLE `boxtypes` DISABLE KEYS */;
-INSERT INTO `boxtypes` VALUES (1,'2003-11-17 13:55:35','cryo grid box','grid_box_cryo.jpg','grid_box_cryo_tiny.jpg'),(2,'2003-11-17 13:55:47','grid box','grid_box.jpg','grid_box_tiny.jpg'),(3,'2003-11-17 13:55:56','tray','tray.png','tray_tiny.png');
+INSERT INTO `boxtypes` VALUES (1,'2003-11-17 21:55:35','cryo grid box','grid_box_cryo.jpg','grid_box_cryo_tiny.jpg'),(2,'2003-11-17 21:55:47','grid box','grid_box.jpg','grid_box_tiny.jpg'),(3,'2003-11-17 21:55:56','tray','tray.png','tray_tiny.png');
 /*!40000 ALTER TABLE `boxtypes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -60,7 +57,7 @@ CREATE TABLE `confirmauth` (
   `lastname` text NOT NULL,
   `email` text NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -82,36 +79,36 @@ DROP TABLE IF EXISTS `dataStatusReport`;
 CREATE TABLE `dataStatusReport` (
   `DEF_id` int(11) NOT NULL AUTO_INCREMENT,
   `DEF_timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `appion_project` int(11) NOT NULL,
-  `processed_session` int(11) NOT NULL,
-  `processed_run` int(11) NOT NULL,
-  `last_exp_runtime` timestamp NOT NULL DEFAULT '2000-01-01 00:00:00',
-  `ace_run` int(11) NOT NULL,
-  `ace2_run` int(11) NOT NULL,
-  `ctfind_run` int(11) NOT NULL,
-  `ace_processed_image` int(11) NOT NULL,
-  `particle_selection` int(11) NOT NULL,
-  `dog_picker` int(11) NOT NULL,
-  `manual_picker` int(11) NOT NULL,
-  `tilt_picker` int(11) NOT NULL,
-  `template_picker` int(11) NOT NULL,
-  `selected_particle` bigint(20) NOT NULL,
-  `classification` int(11) NOT NULL,
-  `classes` int(11) NOT NULL,
-  `classified_particles` bigint(20) NOT NULL,
-  `RCT_Models` int(11) NOT NULL,
-  `tomogram` int(11) NOT NULL,
-  `stack` int(11) NOT NULL,
-  `stack_particle` bigint(20) NOT NULL,
-  `3D_recon` int(11) NOT NULL,
-  `recon_iteration` int(11) NOT NULL,
-  `classified_particle` bigint(20) NOT NULL,
-  `template` int(11) NOT NULL,
-  `initial_model` int(11) NOT NULL,
-  `first_exp_runtime` timestamp NOT NULL DEFAULT '2001-01-01 00:00:00',
+  `appion_project` int(11) NOT NULL DEFAULT '0',
+  `processed_session` int(11) NOT NULL DEFAULT '0',
+  `processed_run` int(11) NOT NULL DEFAULT '0',
+  `last_exp_runtime` timestamp NOT NULL DEFAULT '2000-01-01 08:00:00',
+  `ace_run` int(11) NOT NULL DEFAULT '0',
+  `ace2_run` int(11) NOT NULL DEFAULT '0',
+  `ctfind_run` int(11) NOT NULL DEFAULT '0',
+  `ace_processed_image` int(11) NOT NULL DEFAULT '0',
+  `particle_selection` int(11) NOT NULL DEFAULT '0',
+  `dog_picker` int(11) NOT NULL DEFAULT '0',
+  `manual_picker` int(11) NOT NULL DEFAULT '0',
+  `tilt_picker` int(11) NOT NULL DEFAULT '0',
+  `template_picker` int(11) NOT NULL DEFAULT '0',
+  `selected_particle` bigint(20) NOT NULL DEFAULT '0',
+  `classification` int(11) NOT NULL DEFAULT '0',
+  `classes` int(11) NOT NULL DEFAULT '0',
+  `classified_particles` bigint(20) NOT NULL DEFAULT '0',
+  `RCT_Models` int(11) NOT NULL DEFAULT '0',
+  `tomogram` int(11) NOT NULL DEFAULT '0',
+  `stack` int(11) NOT NULL DEFAULT '0',
+  `stack_particle` bigint(20) NOT NULL DEFAULT '0',
+  `3D_recon` int(11) NOT NULL DEFAULT '0',
+  `recon_iteration` int(11) NOT NULL DEFAULT '0',
+  `classified_particle` bigint(20) NOT NULL DEFAULT '0',
+  `template` int(11) NOT NULL DEFAULT '0',
+  `initial_model` int(11) NOT NULL DEFAULT '0',
+  `first_exp_runtime` timestamp NOT NULL DEFAULT '2000-01-01 08:00:00',
   PRIMARY KEY (`DEF_id`),
   KEY `DEF_timestamp` (`DEF_timestamp`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -121,31 +118,6 @@ CREATE TABLE `dataStatusReport` (
 LOCK TABLES `dataStatusReport` WRITE;
 /*!40000 ALTER TABLE `dataStatusReport` DISABLE KEYS */;
 /*!40000 ALTER TABLE `dataStatusReport` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `django_migrations`
---
-
-DROP TABLE IF EXISTS `django_migrations`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `django_migrations` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `app` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `applied` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `django_migrations`
---
-
-LOCK TABLES `django_migrations` WRITE;
-/*!40000 ALTER TABLE `django_migrations` DISABLE KEYS */;
-/*!40000 ALTER TABLE `django_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -162,7 +134,7 @@ CREATE TABLE `gridboxes` (
   `boxtypeId` int(11) DEFAULT '0',
   `container` text,
   PRIMARY KEY (`gridboxId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -187,7 +159,7 @@ CREATE TABLE `gridlocations` (
   `gridId` int(11) DEFAULT NULL,
   `location` int(11) DEFAULT NULL,
   PRIMARY KEY (`gridlocationId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -224,7 +196,7 @@ CREATE TABLE `grids` (
   `specimen` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`gridId`),
   KEY `label` (`label`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -246,8 +218,8 @@ DROP TABLE IF EXISTS `install`;
 CREATE TABLE `install` (
   `key` varchar(100) NOT NULL,
   `value` varchar(100) NOT NULL,
-  KEY `key` (`key`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`key`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -280,7 +252,7 @@ CREATE TABLE `privileges` (
   `gridboxes` tinyint(4) NOT NULL,
   PRIMARY KEY (`DEF_id`),
   KEY `DEF_timestamp` (`DEF_timestamp`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -289,7 +261,7 @@ CREATE TABLE `privileges` (
 
 LOCK TABLES `privileges` WRITE;
 /*!40000 ALTER TABLE `privileges` DISABLE KEYS */;
-INSERT INTO `privileges` VALUES (1,'2019-01-26 04:40:38','All at administration level',4,4,4,4,4,4,4),(2,'2019-01-26 04:40:38','View all but administrate owned',3,3,3,3,3,3,4),(3,'2019-01-26 04:40:38','Administrate/view only  owned projects and view shared experiments',1,2,2,2,2,2,1),(4,'2019-01-26 04:40:38','View owned projects and shared experiments',1,1,1,1,1,1,1),(5,'2019-01-26 04:40:38','No privilege for anything',0,0,0,0,0,0,0);
+INSERT INTO `privileges` VALUES (1,'2019-01-31 02:15:02','All at administration level',4,4,4,4,4,4,4),(2,'2019-01-31 02:15:02','View all but administrate owned',3,3,3,3,3,3,4),(3,'2019-01-31 02:15:02','Administrate/view only  owned projects and view shared experiments',1,2,2,2,2,2,1),(4,'2019-01-31 02:15:02','View owned projects and shared experiments',1,1,1,1,1,1,1),(5,'2019-01-31 02:15:02','No privilege for anything',0,0,0,0,0,0,0);
 /*!40000 ALTER TABLE `privileges` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -309,7 +281,7 @@ CREATE TABLE `processingdb` (
   KEY `DEF_timestamp` (`DEF_timestamp`),
   KEY `REF|projects|project` (`REF|projects|project`),
   KEY `appiondb` (`appiondb`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -318,7 +290,6 @@ CREATE TABLE `processingdb` (
 
 LOCK TABLES `processingdb` WRITE;
 /*!40000 ALTER TABLE `processingdb` DISABLE KEYS */;
-INSERT INTO `processingdb` VALUES (1,'2019-01-26 04:42:17',1,'ap1');
 /*!40000 ALTER TABLE `processingdb` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -338,7 +309,7 @@ CREATE TABLE `projectexperiments` (
   KEY `project` (`REF|projects|project`),
   KEY `DEF_timestamp` (`DEF_timestamp`),
   KEY `session` (`REF|leginondata|SessionData|session`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -347,6 +318,7 @@ CREATE TABLE `projectexperiments` (
 
 LOCK TABLES `projectexperiments` WRITE;
 /*!40000 ALTER TABLE `projectexperiments` DISABLE KEYS */;
+INSERT INTO `projectexperiments` VALUES (1,'2019-02-01 01:03:50',1,2);
 /*!40000 ALTER TABLE `projectexperiments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -366,7 +338,7 @@ CREATE TABLE `projectowners` (
   KEY `DEF_timestamp` (`DEF_timestamp`),
   KEY `REF|projects|project` (`REF|projects|project`),
   KEY `REF|leginondata|UserData|user` (`REF|leginondata|UserData|user`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -397,7 +369,7 @@ CREATE TABLE `projects` (
   `hidden` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`DEF_id`),
   KEY `hidden` (`hidden`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -406,7 +378,7 @@ CREATE TABLE `projects` (
 
 LOCK TABLES `projects` WRITE;
 /*!40000 ALTER TABLE `projects` DISABLE KEYS */;
-INSERT INTO `projects` VALUES (1,'2019-01-26 04:36:06','test1','testing','','','',NULL,0);
+INSERT INTO `projects` VALUES (1,'2019-02-01 01:03:03','admin project','project to start uploading','','','',NULL,0);
 /*!40000 ALTER TABLE `projects` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -426,7 +398,7 @@ CREATE TABLE `shareexperiments` (
   KEY `DEF_timestamp` (`DEF_timestamp`),
   KEY `REF|leginondata|SessionData|experiment` (`REF|leginondata|SessionData|experiment`),
   KEY `REF|leginondata|UserData|user` (`REF|leginondata|UserData|user`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -462,7 +434,7 @@ CREATE TABLE `userdetails` (
   PRIMARY KEY (`DEF_id`),
   KEY `DEF_timestamp` (`DEF_timestamp`),
   KEY `REF|leginondata|UserData|user` (`REF|leginondata|UserData|user`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -483,4 +455,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-28 21:03:46
+-- Dump completed on 2019-02-11 17:40:13

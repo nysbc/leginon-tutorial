@@ -1,1 +1,1 @@
-docker volume rm mariadb-database
+docker volume rm leginon-mariadb

@@ -11,7 +11,7 @@ echo Done.
 # Change these if you already have other services running on default ports
 WEBPORT=8000
 VNCPORT=5901
-DBPORT=3306
+DBPORT=53306
 
 docker run -d -t \
   -v $(pwd)/emg/data:/emg/data \

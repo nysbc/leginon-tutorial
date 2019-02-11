@@ -1,4 +1,4 @@
-FROM centos:7
+
 MAINTAINER Anchi Cheng <acheng@nysbc.org>
 LABEL authors="Neil Voss, Carl Negro, Alex Noble, Anchi Cheng"
 
@@ -42,7 +42,7 @@ RUN yum -y install \
 && chmod 777 -R /emg
 
 ### Apache setup
-COPY config/sinedon.cfg config/leginon.cfg config/instruments.cfg config/appion.cfg config/redux.cfg /etc/myami/
+COPY config/sinedon.cfg config/leginon.cfg config/instruments.cfg config/pyami.cfg config/appion.cfg config/redux.cfg /etc/myami/
 COPY config/php.ini config/bashrc /etc/
 COPY config/info.php /var/www/html/info.php
 COPY sql/ /sw/sql/
@@ -72,6 +72,7 @@ RUN wget http://emg.nysbc.org/redmine/attachments/download/10961/eman-linux-x86_
 #
 && mkdir /etc/fftw \
 && python /sw/myami/pyami/fft/fftwsetup.py 2 4096 4096 && mv -v ~/fftw3-wisdom-* /etc/fftw/wisdom \
+&& python /sw/myami/pyami/fft/fftwsetup.py 2 3838 3710 && mv -v ~/fftw3-wisdom-* /etc/fftw/wisdom \
 && cp -v /sw/myami/redux/init.d/reduxd /etc/init.d/reduxd \
 #
 ### Change to local user
@@ -96,6 +97,8 @@ RUN chown -R leginonuser:users /home/leginonuser /emg/data \
 && rm -rf root/.cache/ /anaconda-post.log \
 && sed -i -e '/rctv/d' /sw/myami/myamiweb/index.php \
 && updatedb
+
+COPY resetdata.sh /sw/resetdata.sh
 
 COPY startup.sh /sw/startup.sh
 CMD /sw/startup.sh
