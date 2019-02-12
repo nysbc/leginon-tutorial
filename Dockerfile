@@ -1,4 +1,4 @@
-
+FROM centos:7
 MAINTAINER Anchi Cheng <acheng@nysbc.org>
 LABEL authors="Neil Voss, Carl Negro, Alex Noble, Anchi Cheng"
 
