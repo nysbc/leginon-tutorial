@@ -21,7 +21,7 @@ docker run -d -t \
   -w /sw/myami/appion \
   -e DISPLAY=host.docker.internal:0 \
   -p $WEBPORT:80 -p $VNCPORT:5901 -p $DBPORT:3306 \
-  leginon-tutorial
+  semc/leginon-tutorial:beta
 
 echo Waiting for database...
 sleep 10
