@@ -35,8 +35,8 @@ else
         chmod -R 777 /var/lib/mysql
         echo 'mysqld_safe launched.' | tee -a /var/log/startup.log
         mysql -u root < /sw/sql/initdb.sql && echo 'mysql leginondb upload' >> /var/log/startup.log
-        mysql -u root < /sw/sql/leginondb.sql && echo 'mysql leginondb upload' >> /var/log/startup.log
-        mysql -u root < /sw/sql/projectdb.sql && echo 'mysql projectdb upload' >> /var/log/startup.log
+        mysql -u root leginondb < /sw/sql/leginondb.sql && echo 'mysql leginondb upload' >> /var/log/startup.log
+        mysql -u root appiondb < /sw/sql/projectdb.sql && echo 'mysql projectdb upload' >> /var/log/startup.log
         echo 'Leginon and Project databases initialized.' | tee -a /var/log/startup.log
 fi
 
