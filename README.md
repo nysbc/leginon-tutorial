@@ -154,9 +154,11 @@ Click `Create` on the `semc` `leginon-tutorial` repository and wait for the cont
 
 # VNC access and web access url for your docker image.
 
-*Write it down.*
+*Write it down. This is is how you access it later.*
 
 ## Linux/MacOS
+
+*<details><summary>Click to expand</summary><p>*
 
 **VNC access url:** *localhost:5900*
 
@@ -170,6 +172,7 @@ one of the two ways:
 
 - From docker image: start firefox and goto this url: *0.0.0.0:/myamiweb/*
 
+</p></details>
 
 ## Windows &nbsp;&nbsp; *(GUI)*
 
@@ -254,28 +257,53 @@ You should see leginon setup wizard gui appears [like this](docs/start-leginon.p
 # Usage
 
 ## Launch Docker
-Make sure Docker is running:<br />
+
+*Make sure Docker is running:*<br />
 - On CentOS or Ubuntu, type:  `sudo systemctl start docker`.<br />
 - On OSX with Docker Desktop, Start it from Application Launch Pad.<br />
 - On Windows, Kitematic launches Docker automatically.
 
-## Linux/MacOS &nbsp;&nbsp; *(command line)*
-*<details><summary>Click to expand</summary><p>*
+## Run the container
 
-- If you have not already launched the leginon-tutorial container, do:
+*<details><summary>Make sure your docker image is running:Click to expand</summary><p>*
+
+## Linux/MacOS &nbsp;&nbsp; *(command line)*
+
+```sh
+docker ps
+```
+IMAGE field should include "leginon-tutorial"
+
+## Windows &nbsp;&nbsp; *(gui)*
+
+</p></details>
+
+
+*<details><summary>To RUN and TO STOP running image : Click to expand</summary><p>*
+
+## Linux/MacOS &nbsp;&nbsp; *(command line)*
+
+- Navigate to the leginon-tutorial installation directory to access various commands
+
+```sh
+cd
+cd leginon-tutorial
+```
+
+- To launch the leginon-tutorial container, do:
 
 ```./run.sh```
 
-  
+- To stop the container running (this does not delete the container), do:
+
+```./kill.sh``` (Warning, this will stop any other Docker containers you have running as well, use with caution!)
+
+
+*<details><summary>Click for additional Docker Leginon-Tutorial container commands</summary><p>*
+
 - To ssh into the container as root, do:
 
 ```./exec.sh```
-
-*<details><summary>Click for additional Docker Leginon-Tutorial container commands</summary><p>*
-  
-- To kill the container (this does not delete the container), do:
-
-```./kill.sh``` (Warning, this will kill any other Docker containers you have running as well, use with caution!)
 
 - To remove delete the container, but not the mounted data in /emg/data or the volume at /var/lib/mysql, do:
 
@@ -290,10 +318,6 @@ Make sure Docker is running:<br />
 ```./build.sh``` (This will take a while!)
 
 </p></details>
-
-- To access the Appion webviewer, navigate to:
-
-```localhost:8000```
 
 </p></details>
 
