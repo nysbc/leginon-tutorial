@@ -9,8 +9,6 @@ RUN yum -y install epel-release yum && yum -y install \
  python-matplotlib boost148-python \
  ImageMagick bash-completion firefox dbus \
  wxPython numpy scipy python-imaging python2-pip \
-
-RUN yum -y install \
  git mariadb mariadb-server MySQL-python \
  httpd php php-mysql mod_ssl \
  gcc-c++ libtiff-devel python-argparse \
@@ -31,7 +29,6 @@ RUN yum -y install \
 #
 ### MariaDB setup
 && sed -i.bak 's/max_allowed_packet = [0-9]*M/max_allowed_packet = 24M/' /etc/my.cnf \
-&& sed -i.bak 's/max_allowed_packet = [0-9]*M/max_allowed_packet = 24M/' /etc/nanorc \
 #
 ### Appion specific installs   
 && dbus-uuidgen > /var/lib/dbus/machine-id \
@@ -49,10 +46,9 @@ COPY sql/ /sw/sql/
 EXPOSE 80 5901
 
 ### myami
-RUN git clone -b myami-tutorial http://emg.nysbc.org/git/myami /sw/myami
-
-### EMAN 1 setup  (fix libpyEM.so?)
-RUN wget http://emg.nysbc.org/redmine/attachments/download/10961/eman-linux-x86_64-cluster-1.9_stripped.tar.gz && tar xzfv eman-linux-x86_64-cluster-1.9_stripped.tar.gz -C /sw && rm eman-linux-x86_64-cluster-1.9_stripped.tar.gz \
+RUN git clone -b myami-tutorial http://emg.nysbc.org/git/myami /sw/myami \
+### eman1
+&& wget http://emg.nysbc.org/redmine/attachments/download/10961/eman-linux-x86_64-cluster-1.9_stripped.tar.gz && tar xzfv eman-linux-x86_64-cluster-1.9_stripped.tar.gz -C /sw && rm eman-linux-x86_64-cluster-1.9_stripped.tar.gz \
 && ln -sv /sw/eman1/lib/libpyEM.so.ucs4.py2.6 /sw/eman1/lib/libpyEM.so \
 #
 ### Myami setup
@@ -93,12 +89,12 @@ COPY config/config.php /sw/myami/myamiweb/config.php
 RUN chown -R leginonuser:users /home/leginonuser /emg/data \
 && mkdir -p /emg/data/ \
 && chmod -R 777 /emg/ \
+&& cp -rf /sw/myami/tutorial_data/simimages /emg \
 && chmod 700 /home/leginonuser/.vnc/xstartup \
 && rm -rf root/.cache/ /anaconda-post.log \
 && sed -i -e '/rctv/d' /sw/myami/myamiweb/index.php \
 && updatedb
 
 COPY resetdata.sh /sw/resetdata.sh
-
 COPY startup.sh /sw/startup.sh
 CMD /sw/startup.sh
