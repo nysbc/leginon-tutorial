@@ -3,7 +3,13 @@ Docker image for leginon with simulated data for tutorial purpose
 
 # Prerequisites
 
-- A modern operating system (Linux, MacOS, Windows) with 4+ GB of RAM.
+- A modern operating system (Linux, MacOS, Windows) 
+
+*4+ GB of RAM*
+
+*at least 2 GB storage space for the docker image*
+
+- A mouse with middle click capacity
 
 - Docker
 
@@ -136,14 +142,14 @@ Click `Create` on the `semc` `leginon-tutorial` repository and wait for the cont
 
 <br />
 
-# Usage
+# Testing the installation
 
-### VNC into your leginon-tutorial image using this url:
+### VNC into your leginon-tutorial docker image instance using this url:
 *localhost:5901*
 
 password: leginon-tutorial
 
-### From a text terminal type:
+### From a xterm in the docker image, type:
 *start-leginon.py*
 
 You should see leginon setup wizard gui appears.  You now have a working leginon-tutorial installation.
@@ -169,3 +175,4 @@ one of the two ways:
   /sw/resetdata.sh
   ```
 </p></details>
+
