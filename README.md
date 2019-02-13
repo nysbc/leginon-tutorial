@@ -154,6 +154,12 @@ password: leginon-tutorial
 
 You should see leginon setup wizard gui appears.  You now have a working leginon-tutorial installation.
 
+*<details><summary>Show image</summary><p>*
+
+[](docs/start-leginon.png)
+
+</p></details>
+
 ### Access myamiweb
 
 one of the two ways:
