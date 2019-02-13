@@ -9,6 +9,8 @@ Docker container image for leginon with simulated data for tutorial purpose
 
 *at least 2 GB storage space for the docker container image*
 
+- A display with 1920 x 1200 resolution.
+
 - A mouse with middle click capacity
 
 - Docker
@@ -59,7 +61,7 @@ https://www.realvnc.com/en/connect/download/viewer/macos/
 
 </p></details>
 
-
+<br />
 
 # Installation
 **<details><summary>Do you have a Leginon-Tutotial container running in your Docker already ? If not, *click here*</summary>**
@@ -208,11 +210,9 @@ one of the two ways:
 
 </p></details>
 
-<br />
-
 </p></details>
 
-
+<br />
 
 # Testing the installation
 
@@ -238,6 +238,7 @@ password: leginon-tutorial
 
 You should see leginon setup wizard gui appears [like this](docs/start-leginon.png).  You now have a working leginon-tutorial installation.
 
+<br />
 
 # Troubleshooting
 
@@ -272,16 +273,20 @@ You should see leginon setup wizard gui appears [like this](docs/start-leginon.p
 ```sh
 docker ps
 ```
-IMAGE field should include "leginon-tutorial"
+IMAGE field should include "leginon-tutorial" if its container is running.
 
 ## Windows &nbsp;&nbsp; *(gui)*
+
+Select the image in the gui and see if the gui gives you the option to stop.  If it does, it is running.
 
 </p></details>
 
 
-*<details><summary>To RUN and TO STOP running the container : Click to expand</summary><p>*
+*<details><summary>To RUN and to STOP the container : Click to expand</summary><p>*
 
 ## Linux/MacOS &nbsp;&nbsp; *(command line)*
+
+**_<details><summary>Click to expand</summary><p>_**
 
 - Navigate to the leginon-tutorial installation directory to access various commands
 
@@ -321,6 +326,19 @@ cd leginon-tutorial
 
 </p></details>
 
+## Windows &nbsp;&nbsp; *(gui)*
+
+**_<details><summary>Click to expand</summary><p>_**
+
+Select the image in the gui:
+
+- Click "play" button to start
+
+- Click "stop" button to stop
+
+</p></details>
+
+</p></details>
 
 </p></details>
 
