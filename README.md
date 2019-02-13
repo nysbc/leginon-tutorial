@@ -258,19 +258,15 @@ Make sure Docker is running:<br />
 
 <br />
 
-- To VNC into the container, download and install a VNC viewer such as TigerVNC or RealVNC:
+- To VNC into the container
 
-https://bintray.com/tigervnc/stable/tigervnc/1.8.0
-
-https://www.realvnc.com/en/connect/download/viewer/windows/
-
-Use the IP and port found in the running Kitematic container's `Settings >> Hostname/Ports` next to `Docker port 5901` as the VNC address with password `appion-protomo`.
+Use the IP and port found in the running Kitematic container's `Settings >> Hostname/Ports` next to `Docker port 5901` as the VNC address with password `leginon-tutorial`.
 
 **_<details><summary>Click for images ![seehow](https://i.imgur.com/QR7ItjO.png)</summary><p>_**
 
 ![](https://i.imgur.com/LnEVAtr.png)
 
-- Type this `ip:port` into your VNC viewer (password: `appion-protomo`):
+- Type this `ip:port` into your VNC viewer (password: `leginon-tutorial`):
 
 ![](https://i.imgur.com/zFiviSL.png)
 
