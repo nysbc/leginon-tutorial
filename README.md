@@ -1,13 +1,13 @@
 # leginon-tutorial
-Docker image for leginon with simulated data for tutorial purpose
+Docker container image for leginon with simulated data for tutorial purpose
 
 # Prerequisites
 
 - A modern operating system (Linux, MacOS, Windows) 
 
-*4+ GB of RAM*
+*8 GB of RAM*
 
-*at least 2 GB storage space for the docker image*
+*at least 2 GB storage space for the docker container image*
 
 - A mouse with middle click capacity
 
@@ -62,7 +62,7 @@ https://www.realvnc.com/en/connect/download/viewer/macos/
 
 
 # Installation
-**<details><summary>Is your Leginon-Tutotial image running in your Docker already ? If not, *click here*</summary>**
+**<details><summary>Do you have a Leginon-Tutotial container running in your Docker already ? If not, *click here*</summary>**
 
 > **Note:** The installation directory will contain the data directory. 
 
@@ -102,7 +102,7 @@ cd leginon-tutorial
 *<details><summary>click to expand</summary><p>*
 In the Kitematic search bar type: `semc/leginon-tutorial`.
 
-Click `Create` on the `semc` `leginon-tutorial` repository and wait for the container to download and start.
+Click `Create` on the `semc` `leginon-tutorial` repository and wait for the image to download and launch.
 
 **_<details><summary>Click for image</summary><p>_**
 
@@ -152,7 +152,7 @@ Click `Create` on the `semc` `leginon-tutorial` repository and wait for the cont
 
 <br />
 
-# VNC access and web access url for your docker image.
+# VNC access and web access url for your docker container.
 
 *Write it down. This is is how you access it later.*
 
@@ -170,7 +170,7 @@ one of the two ways:
 
 - From host: start any browser and goto this url: *http://localhost:8000/myamiweb/*
 
-- From docker image: start firefox and goto this url: *0.0.0.0:/myamiweb/*
+- Inside the docker container: start firefox and goto this url: *0.0.0.0:/myamiweb/*
 
 </p></details>
 
@@ -216,7 +216,7 @@ one of the two ways:
 
 # Testing the installation
 
-### VNC into your leginon-tutorial docker image instance using the VNC access url found above:
+### VNC into your leginon-tutorial container using the VNC access url found above:
 
 password: leginon-tutorial
 
@@ -233,7 +233,7 @@ password: leginon-tutorial
 </p></details>
 
 
-### From an xterm in the docker image VNC window, type:
+### From an xterm in the docker container VNC window, type:
 *start-leginon.py*
 
 You should see leginon setup wizard gui appears [like this](docs/start-leginon.png).  You now have a working leginon-tutorial installation.
@@ -247,7 +247,7 @@ You should see leginon setup wizard gui appears [like this](docs/start-leginon.p
   
   *Database was not initialized properly.*
   
-  Reset the database and data by running this script inside the docker image.
+  Reset the database and data by running this script inside the docker container.
   
   ```sh
   /sw/resetdata.sh
@@ -265,7 +265,7 @@ You should see leginon setup wizard gui appears [like this](docs/start-leginon.p
 
 ## Run the container
 
-*<details><summary>Make sure your docker image is running:Click to expand</summary><p>*
+*<details><summary>Make sure you have the docker container running:Click to expand</summary><p>*
 
 ## Linux/MacOS &nbsp;&nbsp; *(command line)*
 
@@ -279,7 +279,7 @@ IMAGE field should include "leginon-tutorial"
 </p></details>
 
 
-*<details><summary>To RUN and TO STOP running image : Click to expand</summary><p>*
+*<details><summary>To RUN and TO STOP running the container : Click to expand</summary><p>*
 
 ## Linux/MacOS &nbsp;&nbsp; *(command line)*
 
@@ -290,7 +290,7 @@ cd
 cd leginon-tutorial
 ```
 
-- To launch the leginon-tutorial container, do:
+- To launch a running container of the leginon-tutorial image, do:
 
 ```./run.sh```
 
