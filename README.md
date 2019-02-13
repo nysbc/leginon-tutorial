@@ -142,6 +142,18 @@ Click `Create` on the `semc` `leginon-tutorial` repository and wait for the cont
 
 <br />
 
+**<details><summary>Is you do not have TigerVNC or RealVNC Viewer ? If not, *click here*</summary>**
+  
+- You should start leginon gui commands from inside a VNC viewer as leginonuser and not as the root user. First, download and install a VNC viewer such as TigerVNC or RealVNC:
+
+https://bintray.com/tigervnc/stable/tigervnc/1.9.0
+
+https://www.realvnc.com/en/connect/download/viewer/macos/
+
+</p></details>
+
+<br />
+
 # Testing the installation
 
 ### VNC into your leginon-tutorial docker image instance using this url:
@@ -176,3 +188,103 @@ one of the two ways:
   ```
 </p></details>
 
+# Usage
+
+## Launch Docker
+Make sure Docker is running:<br />
+- On CentOS or Ubuntu, type:  `sudo systemctl start docker`.<br />
+- On OSX with Docker Toolbox, launch the 'Docker Quickstart Terminal'.<br />
+- On Windows, Kitematic launches Docker automatically.
+
+## Linux/MacOS &nbsp;&nbsp; *(command line)*
+*<details><summary>Click to expand</summary><p>*
+
+- If you have not already launched the leginon-tutorial container, do:
+
+```./run.sh```
+
+  
+- To ssh into the container as root, do:
+
+```./exec.sh```
+
+*<details><summary>Click for additional Docker Leginon-Tutorial container commands</summary><p>*
+  
+- To kill the container (this does not delete the container), do:
+
+```./kill.sh``` (Warning, this will kill any other Docker containers you have running as well, use with caution!)
+
+- To remove delete the container, but not the mounted data in /emg/data or the volume at /var/lib/mysql, do:
+
+``` ./rmContainers.sh``` (Warning: This will delete any other inactive containers you may have running as well!)
+
+- To delete the mariadb-database volume, do:
+
+```./rmVolume.sh``` (Warning: This will delete the database and anything you have uploaded in Appion! The volume will be recreated the next time you do ./run.sh, but you will have an empty Appion database!)
+
+- To re-build the leginon-tutorial image from scratch, do:
+
+```./build.sh``` (This will take a while!)
+
+</p></details>
+
+- To access the Appion webviewer, navigate to:
+
+```localhost:8000```
+
+</p></details>
+
+## Windows &nbsp;&nbsp; *(GUI & command line)*
+
+*<details><summary>Click to expand</summary><p>*
+
+- To get to Leginon-Tutorial web viewers in your web browser, in Kitematic click on `Settings` the `Hostname/Ports`. Click on the IP next to Docker Port 80.
+
+- This should open your web browser to the Apache test page. Append `/myamiweb/` to the URL to access Appion.
+
+**_<details><summary>Click for images ![seehow](https://i.imgur.com/QR7ItjO.png)</summary><p>_**
+
+![](https://i.imgur.com/siObtGj.png)
+
+- This should open up your web browser to the displayed address:
+
+![](https://i.imgur.com/ELap1yX.png)
+
+- Append `/myamiweb/` to the address:
+
+![](https://i.imgur.com/T9RMvBX.png)
+
+</p></details>
+
+<br />
+
+- To VNC into the container, download and install a VNC viewer such as TigerVNC or RealVNC:
+
+https://bintray.com/tigervnc/stable/tigervnc/1.8.0
+
+https://www.realvnc.com/en/connect/download/viewer/windows/
+
+Use the IP and port found in the running Kitematic container's `Settings >> Hostname/Ports` next to `Docker port 5901` as the VNC address with password `appion-protomo`.
+
+**_<details><summary>Click for images ![seehow](https://i.imgur.com/QR7ItjO.png)</summary><p>_**
+
+![](https://i.imgur.com/LnEVAtr.png)
+
+- Type this `ip:port` into your VNC viewer (password: `appion-protomo`):
+
+![](https://i.imgur.com/zFiviSL.png)
+
+- The VNC viewer should open:
+
+![](https://i.imgur.com/8BrWwzV.png)
+
+- This allows you to run commands in the image xterm
+
+</p></details>
+
+
+</p></details>
+
+</p></details>
+
+<br />
