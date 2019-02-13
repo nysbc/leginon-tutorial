@@ -7,7 +7,9 @@ Docker image for leginon with simulated data for tutorial purpose
 
 - Docker
 
-- Ability to run X.org window system on your computer (X-client)
+- VNC Viewer (Windows/Linux)
+
+- XQuartz (Mac)
 
 **<details><summary>Do you have Docker installed? If not, *click here*</summary><p>**
 
