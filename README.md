@@ -7,9 +7,9 @@ Docker image for leginon with simulated data for tutorial purpose
 
 - Docker
 
-- VNC Viewer (Windows/Linux)
+- VNC Viewer RealVNC or TigerVNC VNC viewer.
 
-- XQuartz (Mac)
+**MacOS: Do not use remote desktop included with your Mac. Too slow.**
 
 **<details><summary>Do you have Docker installed? If not, *click here*</summary><p>**
 
@@ -43,41 +43,43 @@ Launch Kitematic.
 
 </p></details>
 
-**<details><summary>Do you know if X window can be forwarded to your computer ? If not, *click here*</summary><p>**
-
-## Linux &nbsp;&nbsp;  *(X windows are native)*
-<p>you should be fine</p>
-
-## MacOS *(XQuartz)*
-*<details><summary>click to expand</summary>*
-1. Download from [xquartz.org](https://www.xquartz.org) and install as instructed.
-2. Start XQuartz in Applications/Utilities
-3. Change Preferences/Security/ to allow connections from network clients.
-4. restart XQuartz to use the new preferences.
-</details>
-
-## Windows *(Xming etc.)*
-<p> Requires, for example, *Xming X Server*</p>
-
-</details>
 <br />
 
 # Installation
-**<details><summary>Do you have Leginon-Tutotial image built in your Docker? If not, *click here*</summary>**
+**<details><summary>Is your Leginon-Tutotial image running in your Docker already ? If not, *click here*</summary>**
 
 > **Note:** The installation directory will contain the data directory. 
 
 ## Linux/MacOS &nbsp;&nbsp; *(command line)*
 *<details><summary>click to expand</summary><p>*
 ```sh
+cd
 git clone http://github.com/nysbc/leginon-tutorial
 cd leginon-tutorial
-./build.sh
+./run.sh
 ```
-*This performs the following operations *
-- Downloads the nysbc/leginon-tutorial repository from github saved into a local leginon-tutorial directory.
+*<details><summary>This performs the following operations (click to expand):</summary><p>*
+- Downloads the semc/leginon-tutorial repository from github saved into a local leginon-tutorial directory under your home directory.
 
 - Build a docker image from that,
+
+- Downloads the nysbc/leginon-tutorial repository from github saved into a local leginon-tutorial directory.
+
+- Download the semc/leginon-tutorial image from Docker Hub to your local docker.
+
+- Creates a Docker volume to persist the Mariadb database,
+
+- Mounts `~/leginon-tutorial/emg/data` on the host side to `/emg/data` inside the running container,
+
+- Mounts the `mariadb-database` Docker volume to `/var/lib/mysql` inside the running container,
+
+- Mounts the `~/leginon-tutorial` directory to `/local_data` inside the running container,
+
+- Opens ports 8000 for web traffic, 33060 for database traffic, and 5901 for VNC'ing on the host side to forward into the running container as needed.
+- Waits for the mysqld_safe database daemon to launch (for ~10 seconds, but could in rare instances take longer).
+
+</p></details>
+
 </p></details>
 
 ## Windows &nbsp;&nbsp; *(GUI & command line)*
@@ -127,47 +129,8 @@ Click `Create` on the `semc` `leginon-tutorial` repository and wait for the cont
 
     </p></details>
   </p></details>
-</p></details>
 
 </p></details>
-
-**<details><summary>If you have Leginon-Tutorial image built in your Docker but not yet started it up as a container ? If not, *click here*</summary><p>**
-
-<details><summary>Mac: (click here)</summary><p>
-  
-- Start XQuartz and in its xterm
-```sh
-xhost + 127.0.0.1
-cd leginon-tutorial
-./build.sh
-```
-** The first command allows the localhost display to be forwarded
-</p></details>
-
-<details><summary>Linux:(click here)</summary><p>
-
-```sh
-cd leginon-tutorial
-./build.sh
-```
-</p></details>
-
-*<details><summary>This performs the following operations (click to expand):</summary><p>*
-
-- Creates a Docker volume to persist the Mariadb database,
-
-- Mounts `~/leginon-tutorial/emg/data` on the host side to `/emg/data` inside the running container,
-
-- Mounts the `mariadb-database` Docker volume to `/var/lib/mysql` inside the running container,
-
-- Mounts the `~/leginon-tutorial` directory to `/local_data` inside the running container,
-
-- Opens ports 8000 for web traffic, 33060 for database traffic, and 5901 for VNC'ing into the running container,
-- Waits for the mysqld_safe database daemon to launch (for ~10 seconds, but could in rare instances take longer).
-
-
-</p></details>
-
 
 </p></details>
 
@@ -175,4 +138,34 @@ cd leginon-tutorial
 
 # Usage
 
+### VNC into your leginon-tutorial image using this url:
+*localhost:5901*
 
+password: leginon-tutorial
+
+### From a text terminal type:
+*start-leginon.py*
+
+You should see leginon setup wizard gui appears.  You now have a working leginon-tutorial installation.
+
+### Access myamiweb
+
+one of the two ways:
+
+- From host: start any browser and goto this url: *http://localhost:8000/myamiweb/*
+- From docker image: start firefox and goto this url: *0.0.0.0:/myamiweb/*
+
+# Troubleshooting
+
+### leginon gui does not start
+
+**<details><summary>RuntimeError: Must create at least one project before starting Leginon</summary><p>**
+  
+  *Database was not initialized properly.*
+  
+  Reset the database and data by running this script inside the docker image.
+  
+  ```sh
+  /sw/resetdata.sh
+  ```
+</p></details>
