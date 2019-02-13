@@ -152,13 +152,7 @@ password: leginon-tutorial
 ### From a xterm in the docker image, type:
 *start-leginon.py*
 
-You should see leginon setup wizard gui appears.  You now have a working leginon-tutorial installation.
-
-*<details><summary>Show image</summary><p>*
-
-[image](./docs/start-leginon.png)
-
-</p></details>
+You should see leginon setup wizard gui appears [like this](docs/start-leginon.png).  You now have a working leginon-tutorial installation.
 
 ### Access myamiweb
 
