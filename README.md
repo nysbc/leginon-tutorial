@@ -156,7 +156,7 @@ Click `Create` on the `semc` `leginon-tutorial` repository and wait for the imag
 
 # VNC access and web access url for your docker container.
 
-*Write it down. This is is how you access it later.*
+**_<details><summary>Write them down.  This is how you access it later. Click to expand</summary><p>_**
 
 ## Linux/MacOS
 
@@ -212,6 +212,8 @@ one of the two ways:
 
 </p></details>
 
+</p></details>
+
 <br />
 
 # Testing the installation
@@ -259,14 +261,17 @@ You should see leginon setup wizard gui appears [like this](docs/start-leginon.p
 
 ## Launch Docker
 
-*Make sure Docker is running:*<br />
+*<details><summary>Make sure Docker is running:</summary><p>*
+
 - On CentOS or Ubuntu, type:  `sudo systemctl start docker`.<br />
 - On OSX with Docker Desktop, Start it from Application Launch Pad.<br />
 - On Windows, Kitematic launches Docker automatically.
 
+</p></details>
+
 ## Run the container
 
-*<details><summary>Make sure you have the docker container running:Click to expand</summary><p>*
+*<details><summary>Make sure you have the docker container running:</summary><p>*
 
 ## Linux/MacOS &nbsp;&nbsp; *(command line)*
 
@@ -282,7 +287,7 @@ Select the image in the gui and see if the gui gives you the option to stop.  If
 </p></details>
 
 
-*<details><summary>To RUN and to STOP the container : Click to expand</summary><p>*
+*<details><summary>To RUN and to STOP the container : </summary><p>*
 
 ## Linux/MacOS &nbsp;&nbsp; *(command line)*
 
