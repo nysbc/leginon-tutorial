@@ -49,7 +49,17 @@ Launch Kitematic.
 
 </p></details>
 
-<br />
+**<details><summary>Do you have TigerVNC or RealVNC Viewer on your host ? If not, *click here*</summary>**
+  
+- Download and install a VNC viewer such as TigerVNC or RealVNC:
+
+https://bintray.com/tigervnc/stable/tigervnc/1.9.0
+
+https://www.realvnc.com/en/connect/download/viewer/macos/
+
+</p></details>
+
+
 
 # Installation
 **<details><summary>Is your Leginon-Tutotial image running in your Docker already ? If not, *click here*</summary>**
@@ -142,36 +152,89 @@ Click `Create` on the `semc` `leginon-tutorial` repository and wait for the cont
 
 <br />
 
-**<details><summary>Is you do not have TigerVNC or RealVNC Viewer ? If not, *click here*</summary>**
-  
-- You should start leginon gui commands from inside a VNC viewer as leginonuser and not as the root user. First, download and install a VNC viewer such as TigerVNC or RealVNC:
+# VNC access and web access url for your docker image.
 
-https://bintray.com/tigervnc/stable/tigervnc/1.9.0
+*Write it down.*
 
-https://www.realvnc.com/en/connect/download/viewer/macos/
+## Linux/MacOS
+
+**VNC access url:** *localhost:5900*
+
+- password: leginon-tutorial
+
+**Web access:**
+
+one of the two ways:
+
+- From host: start any browser and goto this url: *http://localhost:8000/myamiweb/*
+
+- From docker image: start firefox and goto this url: *0.0.0.0:/myamiweb/*
+
+
+## Windows &nbsp;&nbsp; *(GUI)*
+
+*<details><summary>Click to expand</summary><p>*
+
+- To find the port, in Kitematic click on `Settings` the `Hostname/Ports`.
+
+- The address and port next to *Docker Port 5901* is for vnc access. In the example shown this means
+
+*192.168.99.100:32771* password: leginon-tutorial
+
+**_<details><summary>Click for images ![seehow](https://i.imgur.com/QR7ItjO.png)</summary><p>_**
+
+![](https://i.imgur.com/LnEVAtr.png)
+
+</p></details>
+
+- The address and port next to *Docker Port 80* is for web access.  In the example shown this means
+
+*192.168.99.100:32770/myamiweb/*
+
+**_<details><summary>Click for images ![seehow](https://i.imgur.com/QR7ItjO.png)</summary><p>_**
+
+![](https://i.imgur.com/siObtGj.png)
+
+- This should open up your web browser to the displayed address:
+
+![](https://i.imgur.com/ELap1yX.png)
+
+- Append `/myamiweb/` to the address:
+
+![](https://i.imgur.com/T9RMvBX.png)
 
 </p></details>
 
 <br />
 
+</p></details>
+
+
+
 # Testing the installation
 
-### VNC into your leginon-tutorial docker image instance using this url:
-*localhost:5901*
+### VNC into your leginon-tutorial docker image instance using the VNC access url found above:
 
 password: leginon-tutorial
 
-### From a xterm in the docker image, type:
+**_<details><summary>Click for images ![seehow](https://i.imgur.com/QR7ItjO.png)</summary><p>_**
+
+![](https://i.imgur.com/zFiviSL.png)
+
+- The VNC viewer should open:
+
+![](https://i.imgur.com/8BrWwzV.png)
+
+- This allows you to run commands in the image xterm
+
+</p></details>
+
+
+### From an xterm in the docker image VNC window, type:
 *start-leginon.py*
 
 You should see leginon setup wizard gui appears [like this](docs/start-leginon.png).  You now have a working leginon-tutorial installation.
 
-### Access myamiweb
-
-one of the two ways:
-
-- From host: start any browser and goto this url: *http://localhost:8000/myamiweb/*
-- From docker image: start firefox and goto this url: *0.0.0.0:/myamiweb/*
 
 # Troubleshooting
 
@@ -193,7 +256,7 @@ one of the two ways:
 ## Launch Docker
 Make sure Docker is running:<br />
 - On CentOS or Ubuntu, type:  `sudo systemctl start docker`.<br />
-- On OSX with Docker Toolbox, launch the 'Docker Quickstart Terminal'.<br />
+- On OSX with Docker Desktop, Start it from Application Launch Pad.<br />
 - On Windows, Kitematic launches Docker automatically.
 
 ## Linux/MacOS &nbsp;&nbsp; *(command line)*
@@ -234,52 +297,6 @@ Make sure Docker is running:<br />
 
 </p></details>
 
-## Windows &nbsp;&nbsp; *(GUI & command line)*
-
-*<details><summary>Click to expand</summary><p>*
-
-- To get to Leginon-Tutorial web viewers in your web browser, in Kitematic click on `Settings` the `Hostname/Ports`. Click on the IP next to Docker Port 80.
-
-- This should open your web browser to the Apache test page. Append `/myamiweb/` to the URL to access Appion.
-
-**_<details><summary>Click for images ![seehow](https://i.imgur.com/QR7ItjO.png)</summary><p>_**
-
-![](https://i.imgur.com/siObtGj.png)
-
-- This should open up your web browser to the displayed address:
-
-![](https://i.imgur.com/ELap1yX.png)
-
-- Append `/myamiweb/` to the address:
-
-![](https://i.imgur.com/T9RMvBX.png)
-
-</p></details>
-
-<br />
-
-- To VNC into the container
-
-Use the IP and port found in the running Kitematic container's `Settings >> Hostname/Ports` next to `Docker port 5901` as the VNC address with password `leginon-tutorial`.
-
-**_<details><summary>Click for images ![seehow](https://i.imgur.com/QR7ItjO.png)</summary><p>_**
-
-![](https://i.imgur.com/LnEVAtr.png)
-
-- Type this `ip:port` into your VNC viewer (password: `leginon-tutorial`):
-
-![](https://i.imgur.com/zFiviSL.png)
-
-- The VNC viewer should open:
-
-![](https://i.imgur.com/8BrWwzV.png)
-
-- This allows you to run commands in the image xterm
-
-</p></details>
-
-
-</p></details>
 
 </p></details>
 
