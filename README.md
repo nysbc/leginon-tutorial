@@ -162,7 +162,7 @@ Click `Create` on the `semc` `leginon-tutorial` repository and wait for the imag
 
 *<details><summary>Click to expand</summary><p>*
 
-**VNC access url:** *localhost:5900*
+**VNC access url:** *localhost:5901*
 
 - password: leginon-tutorial
 
