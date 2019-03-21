@@ -17,6 +17,7 @@ RUN yum -y install epel-release yum && yum -y install \
  libssh2-devel nano file numactl vim \
  python-configparser mlocate nc screen \
  gtkglext-libs pangox-compat tcsh gedit \
+ compat-libf2c-34 compat-libgfortran-41 \
 #
 ### VNC
  tigervnc-server xterm xsetroot fluxbox \
@@ -51,6 +52,9 @@ RUN git clone -b myami-tutorial http://emg.nysbc.org/git/myami /sw/myami \
 && wget http://emg.nysbc.org/redmine/attachments/download/10961/eman-linux-x86_64-cluster-1.9_stripped.tar.gz && tar xzfv eman-linux-x86_64-cluster-1.9_stripped.tar.gz -C /sw && rm eman-linux-x86_64-cluster-1.9_stripped.tar.gz \
 && ln -sv /sw/eman1/lib/libpyEM.so.ucs4.py2.6 /sw/eman1/lib/libpyEM.so \
 #
+&& wget http://emg.nysbc.org/redmine/attachments/download/11662/ctffind-4.1.13.tgz \
+&& tar -xzvf ctffind-4.1.13.tgz -C /sw && rm ctffind-4.1.13.tgz \
+&& ln -sv /sw/ctffind4/ctffind-4.1.13 /usr/bin/ctffind4 \
 ### Myami setup
 && chmod 444 /var/www/html/info.php \
 && ln -sv /sw/myami/myamiweb /var/www/html/myamiweb \
