@@ -315,7 +315,7 @@ cd leginon-tutorial
 
 ```./exec.sh```
 
-- To remove delete the container, but not the mounted data in /emg/data or the volume at /var/lib/mysql, do:
+- To remove the container, but not the mounted data in /emg/data or the volume at /var/lib/mysql, do:
 
 ``` ./rmContainers.sh``` (Warning: This will delete any other inactive containers you may have running as well!)
 
