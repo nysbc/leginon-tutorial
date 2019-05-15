@@ -348,3 +348,8 @@ Select the image in the gui:
 </p></details>
 
 <br />
+
+# Questions ?
+
+## Installation: email acheng@nysbc.org and mention leginon-tutorial
+## Usage: see leginon.org
