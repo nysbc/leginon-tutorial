@@ -234,14 +234,14 @@ one of the two ways:
 
 # terminal access to your docker container.
 
-**_<details><summary>Through root access of the container_**
+**_<details><summary>Through root access of the container_</summary>_**
   
 <p> From your host computer terminal:
-  
+ ```sh 
   cd _your_leginon_tutorial_download_or_git_clone_
   ./exec.sh
   container_root>su leginonuser
-  
+ ``` 
 </p></details>
 
 
