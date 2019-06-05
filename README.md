@@ -34,6 +34,7 @@ Download and install Docker 1.21 or greater for [Linux](https://docs.docker.com/
 Launch docker according to your Docker engine's instructions, typically ``docker start``.
 
 </p><p>
+  
 **Set memory to 4 GB from Docker Advanced Preference**
 </p>
 
@@ -44,7 +45,10 @@ Launch docker according to your Docker engine's instructions, typically ``docker
 
 Download and install Docker Desktop 2.0.0 or greater for [MacOS](https://store.docker.com/editions/community/docker-ce-desktop-mac).
 <p>
+  
+**Set memory to 4 GB from Docker Advanced Preference**
 </p></details>
+
 
 ## Windows &nbsp;&nbsp; *(GUI & command line)*
 *<details><summary>click to expand</summary>*
@@ -52,6 +56,7 @@ Download and install Docker Desktop 2.0.0 or greater for [MacOS](https://store.d
 Download and install Docker Toolbox for [Windows](https://docs.docker.com/toolbox/toolbox_install_windows/).
 
 </p><p>
+
 **Set memory to 4 GB**
 </p>
 
