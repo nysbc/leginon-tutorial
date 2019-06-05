@@ -234,15 +234,18 @@ one of the two ways:
 
 # terminal access to your docker container.
 
+*_<details><summary>Through root access of the container(click to expand)</summary><p>_*
+From your host computer terminal:
+</p><p>
+```sh
+cd
+cd _your_leginon_tutorial_download_or_git_clone_
+./exec.sh
+container_root>su leginonuser
+```
 **<details><summary>Through root access of the container_</summary>**
   
 From your host computer terminal:
-<p>
- ```sh 
-  cd _your_leginon_tutorial_download_or_git_clone_
-  ./exec.sh
-  container_root>su leginonuser
- ``` 
 </p></details>
 
 
