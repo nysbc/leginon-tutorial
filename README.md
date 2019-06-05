@@ -232,6 +232,19 @@ one of the two ways:
 
 <br />
 
+# terminal access to your docker container.
+
+**_<details><summary>Through root access of the container_**
+  
+<p> From your host computer terminal:
+  
+  cd _your_leginon_tutorial_download_or_git_clone_
+  ./exec.sh
+  container_root>su leginonuser
+  
+</p></details>
+
+
 # Testing the installation
 
 ### VNC into your leginon-tutorial container using the VNC access url found above:
