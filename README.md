@@ -15,6 +15,8 @@ Docker container image for leginon with simulated data for tutorial purpose
 
 - Docker
 
+**Set memory to 4 GB instead of the default 2 GB**
+
 - VNC Viewer RealVNC or TigerVNC VNC viewer.
 
 **MacOS: Do not use remote desktop included with your Mac. Too slow.**
@@ -30,6 +32,11 @@ Download and install Docker 1.21 or greater for [Linux](https://docs.docker.com/
 > Consider using a Docker 'convenience script' to install (search on your OS's Docker installation webpage).
 
 Launch docker according to your Docker engine's instructions, typically ``docker start``.
+
+</p><p>
+**Set memory to 4 GB from Docker Advanced Preference**
+</p>
+
 </p></details>
 
 ## MacOS 10.12 and above &nbsp;&nbsp; *(GUI)*
@@ -43,6 +50,10 @@ Download and install Docker Desktop 2.0.0 or greater for [MacOS](https://store.d
 *<details><summary>click to expand</summary>*
 <p>
 Download and install Docker Toolbox for [Windows](https://docs.docker.com/toolbox/toolbox_install_windows/).
+
+</p><p>
+**Set memory to 4 GB**
+</p>
 
 Launch Kitematic.
 > If on first startup Kitematic displays a red error suggesting that you run using VirtualBox, do so.
