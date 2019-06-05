@@ -240,7 +240,7 @@ From your host computer terminal:
 
 ```sh
 cd
-cd _your_leginon_tutorial_download_or_git_clone_
+cd leginon_tutorial
 ./exec.sh
 container_root>su leginonuser
 ```
