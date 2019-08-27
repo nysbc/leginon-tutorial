@@ -380,7 +380,7 @@ Select the image in the gui:
 
 <br />
 
-## Cleanup data and database
+## Reset data and database
 
 *This allows you to start over cleanly*
 
@@ -397,6 +397,18 @@ It remove the image files in /emg/data, delete all tables in your leginondb/proj
 ```cd /sw/```
 
 ```source ./resetdata.sh```
+
+</p></details>
+
+<br />
+
+# Uninstall
+
+*_<details><summary>click to expand</summary><p>_*
+  
+- See Docker documentation to remove the docker images
+
+- All files are saved under leginon-tutorial directory you created during the installation, including the data.  You can remove the directory and its content just like any other directory.
 
 </p></details>
 
