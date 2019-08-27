@@ -380,6 +380,44 @@ Select the image in the gui:
 
 <br />
 
+## Cleanup data and database
+
+*This allows you to start over cleanly.  It remove the image files in /emg/data, delete all tables in your leginondb/projectdb/ap*, and then repopulate that with fresh instruments, calibrations, and settings as if you redid an installation.*
+
+- Access the docker image through terminal as root.  This is described earlier.
+
+```./exec.sh```
+
+- Go to where the script is
+
+```cd /sw/```
+```source ./resetdata.sh
+
+## Get familiar with Leginon gui
+## Learn how to set up automated hole finder
+
+# How to keep myami in this docker image up to date ?
+
+- Access the docker image through terminal as root.  This is described earlier.
+
+```./exec.sh```
+
+- Go to the git clone of myami
+
+```cd /sw/myami```
+
+- Pull git repository
+
+```git pull```
+
+## Switch to another myami branch
+
+- /sw/myami is a git clone of myami-tutorial branch.  You can switch to another branch, for example myami-beta by
+
+```cd /swm/myami```
+
+```git checkout myami-beta```
+
 # Questions ?
 
 ## Installation: email acheng@nysbc.org and mention leginon-tutorial
