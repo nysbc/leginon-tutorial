@@ -382,7 +382,11 @@ Select the image in the gui:
 
 ## Cleanup data and database
 
-*This allows you to start over cleanly.  It remove the image files in /emg/data, delete all tables in your leginondb/projectdb/ap*, and then repopulate that with fresh instruments, calibrations, and settings as if you redid an installation.*
+*This allows you to start over cleanly*
+
+It remove the image files in /emg/data, delete all tables in your leginondb/projectdb/ap*, and then repopulate that with fresh instruments, calibrations, and settings as if you redid an installation.*
+
+*_<details><summary>click to expand</summary><p>_*
 
 - Access the docker image through terminal as root.  This is described earlier.
 
@@ -391,12 +395,35 @@ Select the image in the gui:
 - Go to where the script is
 
 ```cd /sw/```
-```source ./resetdata.sh
 
-## Get familiar with Leginon gui
+```source ./resetdata.sh```
+
+</p></details>
+
+<br />
+
+# What can you do with this leginon/appion installation ?
+
+*_<details><summary>click to expand</summary><p>_*
+
+## Get familiar with Leginon/Appion gui and workflow
+
+This is fully functional simulator.  It can be used to collect fake data, do ctf estimation with CTFFind4 (included) and particle picking (DogPicker and FindEM included) live, as long as you give it enough memory.  You can also import new Leginon Applications and try them out. Of course there are only limited number of the reloaded images, so some operations would behave oddly.
+
 ## Learn how to set up automated hole finder
 
+The preloaded images of sq and hl should all be possible to setup to find holes automatically with MSI-T.  The gold grids are the easier of the two.  Give it a try.
+
+Hint: You may want to use multiple hole template on the c-flat grid.  See leginon.org documentation for more details.
+
+</p></details>
+
+<br />
+
+
 # How to keep myami in this docker image up to date ?
+
+*_<details><summary>click to expand</summary><p>_*
 
 - Access the docker image through terminal as root.  This is described earlier.
 
@@ -410,13 +437,24 @@ Select the image in the gui:
 
 ```git pull```
 
-## Switch to another myami branch
+</p></details>
+
+<br />
+
+# Switch to another myami branch
+
+*_<details><summary>click to expand</summary><p>_*
 
 - /sw/myami is a git clone of myami-tutorial branch.  You can switch to another branch, for example myami-beta by
 
 ```cd /swm/myami```
 
 ```git checkout myami-beta```
+
+</p></details>
+
+<br />
+
 
 # Questions ?
 
