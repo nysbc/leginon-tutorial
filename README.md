@@ -459,7 +459,7 @@ Hint: You may want to use multiple hole template on the c-flat grid.  See legino
 
 - /sw/myami is a git clone of myami-tutorial branch.  You can switch to another branch, for example myami-beta by
 
-```cd /swm/myami```
+```cd /sw/myami```
 
 ```git checkout myami-beta```
 
