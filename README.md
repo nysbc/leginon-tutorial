@@ -446,7 +446,8 @@ Hint: You may want to use multiple hole template on the c-flat grid.  See legino
 ```cd /sw/myami```
 
 - Pull git repository
-
+  
+```git remote set-url https://emg.nysbc.org/git/myami```
 ```git pull```
 
 </p></details>
@@ -461,7 +462,12 @@ Hint: You may want to use multiple hole template on the c-flat grid.  See legino
 
 ```cd /sw/myami```
 
+```git remote set-url https://emg.nysbc.org/git/myami```
 ```git checkout myami-beta```
+
+ - new versions of myami branches uses pymysql.  Until I build a new docker image, you need to add this with pip
+ 
+ ```pip install pymysql==0.10.0```
 
 </p></details>
 
