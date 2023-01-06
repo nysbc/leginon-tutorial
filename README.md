@@ -1,6 +1,9 @@
 # leginon-tutorial
 Docker container image for leginon with simulated data for tutorial purpose
 
+# release
+v1.0 used in 2019 Erice workshop 
+
 # Prerequisites
 
 - A modern operating system (Linux, MacOS, Windows) 
