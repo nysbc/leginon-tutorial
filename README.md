@@ -20,7 +20,7 @@ v1.0 used in 2019 Erice workshop
 
 **Set memory to 4 GB instead of the default 2 GB**
 
-- VNC Viewer RealVNC or TigerVNC VNC viewer.
+- VNC Viewer: TigerVNC VNC viewer(preferred) or RealVNC.
 
 **MacOS: Do not use remote desktop included with your Mac. Too slow.**
 
@@ -74,7 +74,7 @@ Launch Kitematic.
   
 - Download and install a VNC viewer such as TigerVNC or RealVNC:
 
-https://bintray.com/tigervnc/stable/tigervnc/1.9.0
+https://tigervnc.org/
 
 https://www.realvnc.com/en/connect/download/viewer/macos/
 
