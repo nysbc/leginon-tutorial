@@ -481,5 +481,5 @@ Hint: You may want to use multiple hole template on the c-flat grid.  See legino
 
 # Questions ?
 
-## Installation: email acheng@nysbc.org and mention leginon-tutorial
+## Installation: email acheng@czii.org and mention leginon-tutorial
 ## Usage: see leginon.org
