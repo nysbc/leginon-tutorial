@@ -14,6 +14,7 @@ VNCPORT=5901
 DBPORT=53306
 
 docker run -d -t \
+  --privileged \
   -v $(pwd)/emg/data:/emg/data \
   -v leginon-mariadb:/var/lib/mysql \
   -v $(pwd):/local_data \

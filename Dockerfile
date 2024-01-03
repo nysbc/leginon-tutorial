@@ -31,6 +31,8 @@ RUN yum -y install epel-release yum && yum -y install \
 ### MariaDB setup
 && sed -i.bak 's/max_allowed_packet = [0-9]*M/max_allowed_packet = 24M/' /etc/my.cnf \
 #
+### Leginon pip install not in yum
+&& pip --no-cache-dir install pymysql==0.10.0 \
 ### Appion specific installs   
 && dbus-uuidgen > /var/lib/dbus/machine-id \
 && pip --no-cache-dir install --upgrade pip \
