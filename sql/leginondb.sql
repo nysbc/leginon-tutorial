@@ -1387,7 +1387,7 @@ CREATE TABLE `InstrumentData` (
 
 LOCK TABLES `InstrumentData` WRITE;
 /*!40000 ALTER TABLE `InstrumentData` DISABLE KEYS */;
-INSERT INTO `InstrumentData` VALUES (1,'2019-02-01 01:03:09','fake','fake',NULL,NULL,NULL,1),(2,'2019-02-01 01:28:17','SimTEM300','leginon-docker',NULL,0.0027,NULL,1),(3,'2019-02-01 01:32:33','SimCCDCamera','leginon-docker',NULL,NULL,NULL,0),(4,'2019-02-01 01:32:48','SimK2CountingCamera','leginon-docker',NULL,NULL,NULL,0);
+INSERT INTO `InstrumentData` VALUES (1,'2019-02-01 01:03:09','fake','fake',NULL,NULL,NULL,1),(2,'2019-02-01 01:28:17','SimTEM300','leginon-docker',NULL,0.0027,NULL,0),(3,'2019-02-01 01:32:33','SimCCDCamera','leginon-docker',NULL,NULL,NULL,0),(4,'2019-02-01 01:32:48','SimK2CountingCamera','leginon-docker',NULL,NULL,NULL,0);
 /*!40000 ALTER TABLE `InstrumentData` ENABLE KEYS */;
 UNLOCK TABLES;
 
